@@ -1,0 +1,22 @@
+[
+  {
+    "term": "Candida guillermondii",
+    "category": "treatment"
+  },
+  {
+    "term": "Rhodotorula mucilaginosa",
+    "category": "treatment"
+  },
+  {
+    "term": "consortium of Candida guillermondii and Rhodotorula mucilaginosa",
+    "category": "treatment"
+  },
+  {
+    "term": "soil yeasts and iron nanoparticle (NP-Fe2O3)",
+    "category": "treatment"
+  },
+  {
+    "term": "soil treatment",
+    "category": "application_mode"
+  }
+]

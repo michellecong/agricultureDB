@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  background: #2d6a4f;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header nav {
+  display: flex;
+  gap: 8px;
+}
+
+.header nav button {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+
+.header nav button:hover,
+.header nav button.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+main {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+/* Filter bar */
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filters input,
+.filters select {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #2d6a4f;
+}
+
+.btn {
+  padding: 8px 20px;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #245a40;
+}
+.btn.secondary {
+  background: #6c757d;
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th {
+  background: #f0f4f8;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+tr:hover td {
+  background: #f9fafb;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge.increase {
+  background: #d4edda;
+  color: #155724;
+}
+.badge.decrease {
+  background: #f8d7da;
+  color: #721c24;
+}
+.badge.no_change {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+/* Upload */
+.upload-zone {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 48px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.upload-zone:hover {
+  border-color: #2d6a4f;
+}
+.upload-zone p {
+  color: #888;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.status {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.status.success {
+  background: #d4edda;
+  color: #155724;
+}
+.status.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+.status.info {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 48px;
+  color: #aaa;
+}
