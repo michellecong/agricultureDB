@@ -45,6 +45,11 @@ Before pushing to GitHub:
 
 ## Deploy to Render (Free Tier)
 
+**Free tier limits:**
+- Web Service: spins down after ~15 min idle; first visit after idle takes ~30–50 sec to wake
+- PostgreSQL: 1 GB storage, 90-day limit (then export & recreate if needed)
+- 750 free build minutes/month
+
 ### 1. Push to GitHub
 
 ```bash
@@ -95,9 +100,18 @@ If Blueprint fails, create manually:
 
 1. **PostgreSQL** → New → Create database (free plan)
 2. **Web Service** → New → Connect repo
-   - **Build**: `pip install -r requirements.txt && cd frontend && npm install && REACT_APP_API_URL=/api npm run build`
+   - **Build**: `pip install -r requirements.txt && cd frontend && npm ci --legacy-peer-deps && CI=false GENERATE_SOURCEMAP=false REACT_APP_API_URL=/api npm run build`
    - **Start**: `uvicorn api.main:app --host 0.0.0.0 --port $PORT`
    - **Env**: `DATABASE_URL` (from DB), `GEMINI_API_KEY` (secret)
+
+## Build Failed?
+
+1. **Check Render Build Logs** – Dashboard → Your Service → Deploy → click failed deploy → **Logs** (scroll to see the actual error).
+2. **Common fixes:**
+   - **Python**: Ensure `runtime.txt` exists with `python-3.12.0`
+   - **Node**: `npm ci --legacy-peer-deps` instead of `npm install` if peer deps fail
+   - **Memory**: Add `GENERATE_SOURCEMAP=false` to reduce React build memory
+   - **pymupdf**: If it fails, Render may need a different buildpack; try `pip install pymupdf --no-cache-dir`
 
 ## Environment Variables
 

@@ -48,8 +48,6 @@ export default function Upload() {
     setLoading(false);
   };
 
-  const busy = (queueStatus?.processing_count ?? 0) > 0 || (queueStatus?.queue_length ?? 0) > 0;
-
   return (
     <div>
       <div className="card">
